@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dracula - CSS Modal</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body{
+        font-family: Arial, Helvetica, sans-serif
+    }
+
+    .modal{
+        background-color: rgba(0, 0, 0, 0.8);
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .5s;
+    }
+
+    .modal__content{
+        width: 75%;
+        height: 60%;
+        background-color: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        padding: 2em;
+        border-radius: 1em;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .5s;
+    }
+    a:link,
+    a:visited{
+        text-decoration: none;
+    }
+    .modal__close{
+        top:.5em;
+        right:1em;
+        position: absolute;
+        font-size: 2em;
+        color:#363636;
+    }
+
+    #modal:target{
+        opacity: 1;
+        visibility: visible;
+    }
+
+    #modal:target .modal__content{
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .modal__heading{
+        color: dodgerblue;
+        margin-bottom: 1em;
+    }
+
+    .modal-open{
+        display: inline-block;
+        color: dodgerblue;
+        margin: 2em;
+    }
+
+    .modal__paragraph{
+        line-height: 1.5em;
+    }
+</style>
+<body>
+    <a href="#modal" class="modal-open">Open Modal</a>
+    <div class="modal" id="modal">
+        <div class="modal__content">
+            <a href="#" class="modal__close">&times;</a>
+            <h2 class="modal__heading">CSS Modal</h2>
+            <p class="modal__paragraph">Aliquip consequat mollit commodo eu esse aute voluptate est do sit officia. Ex ex adipisicing est nisi nisi sit incididunt velit. Aliquip aute sint eu enim. Occaecat minim velit ullamco ad nostrud exercitation sint ex consequat. Nisi elit veniam consectetur nulla ex cupidatat do nostrud ullamco. Officia voluptate aute do ullamco labore Lorem laborum incididunt laboris sint esse. Eu sunt dolore voluptate nulla enim labore nulla minim deserunt quis ullamco est veniam.</p>
+        </div>
+    </div>
+</body>
+</html>
